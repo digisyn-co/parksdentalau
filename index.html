@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Park St Dental Practice — Family, Children, Cosmetic & Dental Implants in Mona Vale</title>
+<meta name="description" content="Trusted family, children's and cosmetic dental practice and accredited Dental Implant Centre in Mona Vale, caring for the Northern Beaches for over 60 years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#00040B;
+  --ink-soft:#14181F;
+  --terra:#885748;
+  --terra-deep:#6F4437;
+  --terra-tint:#F3EAE6;
+  --rose-tint:#EFE4DF;
+  --paper:#FBF9F7;
+  --cloud:#F4F5F9;
+  --body:#4A4C52;
+  --line:rgba(0,4,11,.09);
+  --line-dark:rgba(255,255,255,.14);
+  --white:#FFFFFF;
+  --radius:18px;
+  --radius-sm:10px;
+  --shadow-soft:0 20px 60px -24px rgba(0,4,11,.18);
+  --shadow-lift:0 30px 80px -30px rgba(0,4,11,.3);
+  --ease:cubic-bezier(.22,.61,.21,1);
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px; --s7:140px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--body);background:var(--paper);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+a,button{cursor:pointer}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--terra)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+h1,h2,h3,h4{font-weight:600;color:var(--ink);line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,6.2vw,4.9rem)}
+h2{font-size:clamp(2rem,4.2vw,3.4rem)}
+h3{font-size:clamp(1.25rem,2vw,1.55rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:var(--s3)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--terra);opacity:.6}
+.lead{font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.75}
+.section{padding:var(--s7) 0}
+@media(max-width:820px){.section{padding:var(--s6) 0}}
+
+/* ---------- reveal animations ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .hero-media video{display:none}
+  .marquee-track{animation:none!important}
+}
+
+/* ---------- header ---------- */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s var(--ease),box-shadow .4s var(--ease)}
+.header::after{content:"";position:absolute;inset:0;background:rgba(0,4,11,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:-1;opacity:1;transition:background .4s}
+.header.scrolled::after{background:rgba(0,4,11,.88)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:14px clamp(20px,4vw,48px);max-width:1400px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:14px;color:#fff}
+.brand img{height:52px;width:auto}
+.brand-name{display:flex;flex-direction:column;line-height:1.15}
+.brand-name b{font-weight:700;letter-spacing:.1em;font-size:.98rem}
+.brand-name span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;opacity:.65}
+.nav{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center}
+.nav a{color:rgba(255,255,255,.82);font-size:.92rem;font-weight:500;position:relative;padding:6px 0;transition:color .25s}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.header-ctas{display:flex;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.94rem;padding:13px 26px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,color .25s;will-change:transform}
+.btn svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-solid{background:#fff;color:var(--ink)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-deep);transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(136,87,72,.65)}
+.btn-outline{border-color:rgba(0,4,11,.2);color:var(--ink)}
+.btn-outline:hover{border-color:var(--terra);color:var(--terra)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:6px}
+@media(max-width:1020px){.nav{display:none}.btn-ghost.hdr-call{display:none}}
+@media(max-width:560px){.brand img{height:40px}.brand-name{display:none}.header-in{padding:12px 20px}.btn-solid{padding:11px 20px;font-size:.88rem}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero-media{position:absolute;inset:0}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,4,11,.9) 0%,rgba(0,4,11,.45) 42%,rgba(0,4,11,.25) 70%,rgba(0,4,11,.55) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(80% 60% at 20% 85%,rgba(136,87,72,.32),transparent 60%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-top:130px;padding-bottom:clamp(48px,7vh,84px)}
+.hero-kicker{display:inline-flex;align-items:center;gap:12px;font-size:.8rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:var(--s3)}
+.hero-kicker::before{content:"";width:38px;height:1px;background:var(--terra)}
+.hero h1{color:#fff;max-width:14ch}
+.hero h1 .serif{color:#D9A895;font-size:1.04em}
+.hero-sub{max-width:52ch;margin-top:var(--s3);font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(255,255,255,.85);font-weight:400}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:var(--s4)}
+.hero-proof{display:flex;flex-wrap:wrap;gap:clamp(18px,3.5vw,52px);margin-top:clamp(36px,5vh,60px);padding-top:var(--s3);border-top:1px solid rgba(255,255,255,.18)}
+.proof{display:flex;flex-direction:column;gap:2px}
+.proof b{font-size:clamp(1.25rem,2vw,1.6rem);font-weight:700;color:#fff;letter-spacing:-.01em}
+.proof b .serif{color:#D9A895;font-size:1.05em}
+.proof span{font-size:.8rem;letter-spacing:.05em;color:rgba(255,255,255,.65)}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--ink);color:rgba(255,255,255,.8);overflow:hidden;padding:18px 0;border-top:1px solid var(--line-dark)}
+.marquee-track{display:flex;gap:64px;width:max-content;animation:mq 38s linear infinite}
+.marquee-track span{display:flex;align-items:center;gap:64px;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.marquee-track i{font-style:normal;color:var(--terra);font-size:.7rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.about-media{position:relative}
+.about-media .frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lift)}
+.about-media .frame img{aspect-ratio:4/4.6;object-fit:cover;width:100%;transition:transform 1.2s var(--ease)}
+.about-media:hover .frame img{transform:scale(1.035)}
+.about-media::before{content:"";position:absolute;inset:auto -26px -26px auto;width:62%;height:62%;border:1px solid rgba(136,87,72,.35);border-radius:var(--radius);z-index:-1}
+.about-badge{position:absolute;left:-18px;bottom:34px;background:#fff;border-radius:14px;box-shadow:var(--shadow-soft);padding:16px 22px;display:flex;align-items:center;gap:14px}
+.about-badge .num{font-family:'Instrument Serif',serif;font-style:italic;font-size:2rem;color:var(--terra);line-height:1}
+.about-badge .lbl{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--body);line-height:1.4}
+.about-copy p+p{margin-top:var(--s2)}
+.about-copy h2{margin-bottom:var(--s3)}
+.about-copy h2 .serif{display:block;font-size:1.06em}
+.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-top:var(--s4)}
+.fact{background:var(--paper);padding:18px 16px;text-align:center}
+.fact b{display:block;font-size:1.35rem;font-weight:700;color:var(--ink)}
+.fact span{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}.about-media{max-width:480px}}
+
+/* ---------- services ---------- */
+.svc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s5)}
+.svc-head p{max-width:46ch}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px)}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lift)}
+.svc-img{position:relative;overflow:hidden;aspect-ratio:16/10.5}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.svc:hover .svc-img img{transform:scale(1.06)}
+.svc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,4,11,.35),transparent 55%)}
+.svc-tag{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(0,4,11,.45);backdrop-filter:blur(6px);padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
+.svc-body{padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;flex:1}
+.svc-body h3{margin-bottom:10px}
+.svc-body>p{font-size:.95rem;margin-bottom:var(--s3)}
+.svc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--s3)}
+.svc-list li{font-size:.8rem;font-weight:600;color:var(--terra-deep);background:var(--terra-tint);padding:6px 13px;border-radius:999px}
+.svc-link{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;color:var(--ink)}
+.svc-link svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.svc-link:hover{color:var(--terra)}
+.svc-link:hover svg{transform:translateX(4px)}
+@media(max-width:980px){.svc-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}.svc-head{flex-direction:column;align-items:flex-start}}
+
+/* ---------- why / choose ---------- */
+.why{background:var(--ink);color:rgba(255,255,255,.78);position:relative;overflow:hidden}
+.why::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 20%,rgba(136,87,72,.22),transparent 65%)}
+.why .wrap{position:relative}
+.why h2{color:#fff}
+.why h2 .serif{color:#D9A895}
+.why-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:center}
+.why-list{list-style:none;display:flex;flex-direction:column;margin-top:var(--s4)}
+.why-list li{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1.02rem;color:rgba(255,255,255,.88)}
+.why-list li:last-child{border-bottom:none}
+.why-list .tick{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(136,87,72,.28);border:1px solid rgba(217,168,149,.5);display:grid;place-items:center;margin-top:2px}
+.why-list .tick svg{width:12px;height:12px;stroke:#D9A895}
+.why-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lift)}
+.why-media img{aspect-ratio:4/4.8;width:100%;object-fit:cover}
+.why-media figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(to top,rgba(0,4,11,.85),transparent);color:rgba(255,255,255,.9);font-size:.9rem}
+.suburbs{margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid rgba(255,255,255,.12)}
+.suburbs h4{color:#fff;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.suburbs p{font-size:.92rem;line-height:2;color:rgba(255,255,255,.62)}
+.suburbs p b{color:rgba(255,255,255,.85);font-weight:600}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}.why-media{max-width:520px}}
+
+/* ---------- team ---------- */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.team-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lift);position:relative}
+.team-media img{width:100%;aspect-ratio:4/3.4;object-fit:cover;transition:transform 1.2s var(--ease)}
+.team-media:hover img{transform:scale(1.03)}
+.dentists{margin-top:var(--s4);display:flex;flex-direction:column}
+.dentist{display:flex;justify-content:space-between;gap:var(--s3);align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.dentist:first-child{border-top:1px solid var(--line)}
+.dentist b{font-size:1.12rem;font-weight:700;color:var(--ink)}
+.dentist small{display:block;font-size:.82rem;color:var(--terra);font-weight:600;letter-spacing:.02em;margin-top:2px}
+.dentist span{font-size:.85rem;text-align:right;max-width:26ch;color:var(--body)}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr}.dentist span{text-align:left}}
+
+/* ---------- heritage band ---------- */
+.heritage{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:var(--ink)}
+.heritage img.bg{position:absolute;inset:0;width:100%;height:110%;object-fit:cover;object-position:center 40%;will-change:transform}
+.heritage::before{content:"";position:absolute;inset:0;background:rgba(0,4,11,.62);z-index:1}
+.heritage-in{position:relative;z-index:2;max-width:820px;padding:var(--s6) clamp(20px,4vw,48px)}
+.heritage .serif{color:#D9A895}
+.heritage h2{color:#fff;font-size:clamp(1.9rem,4vw,3.2rem)}
+.heritage p{margin-top:var(--s3);color:rgba(255,255,255,.82);font-size:clamp(1rem,1.4vw,1.15rem)}
+
+/* ---------- partners ---------- */
+.partners{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.partners .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s4);padding-top:var(--s5);padding-bottom:var(--s5)}
+.partners p{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+.partner-logos{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:center}
+.partner-logos img{height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:filter .35s,opacity .35s}
+.partner-logos img:hover{filter:none;opacity:1}
+
+/* ---------- visit / contact ---------- */
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,90px)}
+.visit-cards{display:grid;gap:14px;margin-top:var(--s4)}
+.vcard{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px 24px;transition:border-color .3s,transform .3s var(--ease)}
+.vcard:hover{border-color:rgba(136,87,72,.4);transform:translateX(4px)}
+.vcard .ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--terra-tint);display:grid;place-items:center}
+.vcard .ico svg{width:19px;height:19px;stroke:var(--terra)}
+.vcard b{display:block;color:var(--ink);font-size:1rem;margin-bottom:2px}
+.vcard p,.vcard a{font-size:.93rem}
+.vcard a:hover{color:var(--terra)}
+.hours{background:var(--ink);color:rgba(255,255,255,.8);border-radius:var(--radius);padding:clamp(28px,3.4vw,44px);position:relative;overflow:hidden;height:fit-content}
+.hours::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 90% 0%,rgba(136,87,72,.3),transparent 60%)}
+.hours *{position:relative}
+.hours h3{color:#fff;margin-bottom:var(--s3)}
+.hours h3 .serif{color:#D9A895}
+.hrow{display:flex;justify-content:space-between;gap:var(--s3);padding:13px 0;border-bottom:1px dashed rgba(255,255,255,.18);font-size:.95rem}
+.hrow span:last-child{color:#fff;font-weight:600}
+.hours .note{margin-top:var(--s3);font-size:.86rem;line-height:1.7;color:rgba(255,255,255,.6)}
+.hours .note b{color:#D9A895;font-weight:600}
+.hours .btn{margin-top:var(--s3)}
+@media(max-width:900px){.visit-grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.footer{background:var(--ink);color:rgba(255,255,255,.65);padding:var(--s6) 0 var(--s3)}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:clamp(30px,4vw,60px);padding-bottom:var(--s5);border-bottom:1px solid rgba(255,255,255,.12)}
+.footer h5{color:#fff;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:.93rem}
+.footer ul a{transition:color .25s}
+.footer ul a:hover{color:#D9A895}
+.footer-brand img{height:76px;margin-bottom:18px}
+.footer-brand p{font-size:.92rem;line-height:1.75;max-width:34ch}
+.footer-tag{padding:var(--s4) 0;text-align:center;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:600;color:#fff;letter-spacing:-.02em}
+.footer-tag .serif{color:#D9A895;font-size:1.08em}
+.footer-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);padding-top:var(--s3);border-top:1px solid rgba(255,255,255,.12);font-size:.82rem}
+.socials{display:flex;gap:12px}
+.socials a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.socials a:hover{background:var(--terra);border-color:var(--terra)}
+.socials svg{width:15px;height:15px;fill:#fff}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+
+/* ---------- floating book bar (mobile) ---------- */
+.float-cta{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;display:none;gap:10px}
+.float-cta .btn{flex:1;justify-content:center;box-shadow:0 18px 40px -12px rgba(0,4,11,.5)}
+@media(max-width:700px){.float-cta{display:flex}}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="header-in">
+    <a class="brand" href="#top" aria-label="Park St Dental Practice — home">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/Untitled-design-63-e1770958658218.png" alt="Park St Dental Practice logo">
+      <span class="brand-name"><b>PARK ST</b><span>Dental Practice</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#why">Why Us</a>
+      <a href="#team">Our Team</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-ctas">
+      <a class="btn btn-ghost hdr-call" href="tel:0299975770">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        (02) 9997 5770
+      </a>
+      <a class="btn btn-solid" href="https://parkstdental.com.au/contact/" aria-label="Book an appointment online">
+        Book Online
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03698-E.jpg-scaled.webp">
+      <source src="https://parkstdental.com.au/wp-content/uploads/2026/03/smiles-landscape.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap hero-in">
+    <p class="hero-kicker rv">Mona Vale · Northern Beaches · Est. 60+ Years</p>
+    <h1 class="rv rv-d1">Generations of <span class="serif">beautiful smiles,</span> one heritage home.</h1>
+    <p class="hero-sub rv rv-d2">Trusted family, children's &amp; cosmetic dentistry — and an accredited Dental Implant Centre — caring for Mona Vale and the Northern Beaches for over 60 years.</p>
+    <div class="hero-actions rv rv-d3">
+      <a class="btn btn-terra" href="https://parkstdental.com.au/contact/">
+        Book Your Visit
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#treatments">Explore Treatments</a>
+    </div>
+    <div class="hero-proof rv rv-d4">
+      <div class="proof"><b>60<span class="serif">+</span></b><span>Years in Mona Vale</span></div>
+      <div class="proof"><b>5<span class="serif">★</span></b><span>Hundreds of Google reviews</span></div>
+      <div class="proof"><b>Accredited</b><span>Dental Implant Centre</span></div>
+      <div class="proof"><b>QIP</b><span>Accredited Dental Practice</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Family Dentistry <i>✦</i> Children's Dentistry <i>✦</i> Cosmetic Dentistry <i>✦</i> Dental Implants <i>✦</i> Invisalign <i>✦</i> Emergency Care <i>✦</i> Teeth Whitening <i>✦</i> Sedation Dentistry <i>✦</i></span>
+    <span>Family Dentistry <i>✦</i> Children's Dentistry <i>✦</i> Cosmetic Dentistry <i>✦</i> Dental Implants <i>✦</i> Invisalign <i>✦</i> Emergency Care <i>✦</i> Teeth Whitening <i>✦</i> Sedation Dentistry <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="frame">
+        <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03503-E.jpg-scaled.webp" alt="Dr Neda Gorji, Principal Dental Surgeon at Park St Dental Practice" loading="lazy">
+      </div>
+      <div class="about-badge">
+        <span class="num">60+</span>
+        <span class="lbl">Years caring for<br>Northern Beaches families</span>
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow rv">Welcome to Park St</p>
+      <h2 class="rv rv-d1">Historic charm, <span class="serif">contemporary dentistry.</span></h2>
+      <p class="lead rv rv-d2">Park St Dental Practice is a privately owned and operated modern dental practice, located at 26 Park Street, Mona Vale, within a beautifully preserved heritage-listed building — one of the oldest in the area.</p>
+      <p class="rv rv-d2">For decades we've cared for generations of families across Mona Vale and the Northern Beaches. We believe dentistry is about more than just teeth — it's about people, trust, and long-term oral health. Led by our principal dentist, Dr Neda Gorji, our close-knit team of dentists, surgeons and support staff genuinely care about your comfort and wellbeing.</p>
+      <p class="rv rv-d3">Our initial consultation fee is <b style="color:var(--ink)">$90</b> (excluding X-rays), including a comprehensive assessment and a personalised treatment plan with clear, estimated costs — so you can make informed decisions about your care.</p>
+      <div class="about-facts rv rv-d3">
+        <div class="fact"><b>3</b><span>Experienced dentists</span></div>
+        <div class="fact"><b>$90</b><span>Initial consult*</span></div>
+        <div class="fact"><b>1</b><span>Heritage-listed home</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="treatments" style="background:var(--cloud);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <p class="eyebrow rv">Our Treatments</p>
+        <h2 class="rv rv-d1">Complete care, <span class="serif">under one roof.</span></h2>
+      </div>
+      <p class="rv rv-d2">A comprehensive range of dental treatments for patients of all ages — from first check-ups to full smile transformations.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-img">
+          <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/IMG_5900-scaled-e1775736333782.webp" alt="Park St dentist gently reassuring a young patient holding a yellow balloon" loading="lazy">
+          <span class="svc-tag">Every Age</span>
+        </div>
+        <div class="svc-body">
+          <h3>General &amp; Emergency Dentistry</h3>
+          <p>Gentle, thorough everyday care for the whole family — including nervous patients and same-day emergencies.</p>
+          <ul class="svc-list">
+            <li>Family Dentistry</li><li>Children's Dentistry</li><li>Root Canal</li><li>Emergency Care</li><li>Sedation &amp; Sleep</li><li>Teeth Grinding</li><li>Snoring &amp; Sleep Apnoea</li>
+          </ul>
+          <a class="svc-link" href="https://parkstdental.com.au/">Explore general care <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+      <article class="svc rv rv-d1">
+        <div class="svc-img">
+          <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03698-E.jpg-scaled.webp" alt="Dentist showing a smiling patient her new smile in a hand mirror" loading="lazy">
+          <span class="svc-tag">Smile Design</span>
+        </div>
+        <div class="svc-body">
+          <h3>Cosmetic Dentistry</h3>
+          <p>Beautiful, natural-looking smile transformations designed around your features — never overdone.</p>
+          <ul class="svc-list">
+            <li>Veneers</li><li>Crowns &amp; Bridges</li><li>Invisalign &amp; Clear Aligners</li><li>Braces</li><li>Teeth Whitening</li>
+          </ul>
+          <a class="svc-link" href="https://parkstdental.com.au/">Explore cosmetic care <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+      <article class="svc rv rv-d2">
+        <div class="svc-img">
+          <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04077-E.jpg.webp" alt="3D digital dental implant planning scans on screen at Park St Dental" loading="lazy">
+          <span class="svc-tag">Accredited Centre</span>
+        </div>
+        <div class="svc-body">
+          <h3>Dental Implants</h3>
+          <p>An accredited Dental Implant Centre with advanced 3D digital planning — permanent, natural-feeling replacements for missing teeth.</p>
+          <ul class="svc-list">
+            <li>Single Implants</li><li>3D Digital Planning</li><li>Implant Consultations</li>
+          </ul>
+          <a class="svc-link" href="https://parkstdental.com.au/">Explore implants <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="section why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <p class="eyebrow rv" style="color:#D9A895">Why Park St</p>
+      <h2 class="rv rv-d1">Why families choose <span class="serif">Park St Dental Practice</span></h2>
+      <ul class="why-list rv rv-d2">
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Experienced family and cosmetic dentists and implant surgeons</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Accredited Dental Implant Centre</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Gentle care for children and nervous patients</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>State-of-the-art digital technology</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Beautiful, natural smile transformations</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Convenient Mona Vale location with onsite parking</li>
+        <li><span class="tick"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>Trusted by hundreds of five-star Google reviewers</li>
+      </ul>
+      <div class="suburbs rv rv-d3">
+        <h4>We welcome patients from</h4>
+        <p><b>Mona Vale</b> · Newport · Warriewood · Bayview · Avalon · Narrabeen · Collaroy · Dee Why · Ingleside · Elanora Heights · and all surrounding suburbs</p>
+      </div>
+    </div>
+    <figure class="why-media rv rv-d1">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03963-E.jpg-scaled.webp" alt="Park St team member warmly assisting a senior patient at the practice reception" loading="lazy">
+      <figcaption>A warm, welcoming environment for patients of all ages.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="section" id="team">
+  <div class="wrap team-grid">
+    <div class="team-media rv">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04621-Edit.webp" alt="The three dentists of Park St Dental Practice outside the heritage building" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow rv">Our Team</p>
+      <h2 class="rv rv-d1">More than clinicians — <span class="serif">a close-knit family.</span></h2>
+      <p class="rv rv-d2" style="margin-top:var(--s3)">Our team of general dentists, dental surgeons and friendly support staff work together to make your dental experience both effective and comfortable.</p>
+      <div class="dentists rv rv-d3">
+        <div class="dentist">
+          <div><b>Dr Neda Gorji</b><small>Principal Dental Surgeon · Accredited Implantologist</small></div>
+          <span>Dental implants, cosmetic &amp; children's dentistry, TMJ</span>
+        </div>
+        <div class="dentist">
+          <div><b>Dr Michael Hui</b><small>Dentist · BDSc (UWA), BSc (UBC)</small></div>
+          <span>Wisdom teeth, endodontics, advanced restorative</span>
+        </div>
+        <div class="dentist">
+          <div><b>Dr Rojin Ghoseiri</b><small>Dentist · DDS, BDS (ADC)</small></div>
+          <span>Family &amp; children's dentistry, crowns &amp; bridges, TMJ</span>
+        </div>
+      </div>
+      <a class="btn btn-outline rv rv-d4" style="margin-top:var(--s4)" href="https://parkstdental.com.au/our-team/">
+        Meet the full team
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HERITAGE BAND ================= -->
+<section class="heritage">
+  <img class="bg" id="heritageBg" src="https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04658-Edit.webp" alt="" loading="lazy" aria-hidden="true">
+  <div class="heritage-in">
+    <p class="eyebrow rv" style="color:#D9A895;justify-content:center;display:flex">26 Park Street, Mona Vale</p>
+    <h2 class="rv rv-d1">One of the area's oldest buildings, home to its <span class="serif">most modern dentistry.</span></h2>
+    <p class="rv rv-d2">Behind the sandstone walls of our beautifully preserved heritage-listed home, you'll find state-of-the-art digital technology and a team that has cared for generations.</p>
+  </div>
+</section>
+
+<!-- ================= PARTNERS ================= -->
+<section class="partners">
+  <div class="wrap">
+    <p class="rv">Trusted &amp; Accredited</p>
+    <div class="partner-logos rv rv-d1">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_123_Philips300x450.jpg" alt="Philips Zoom whitening partner logo" loading="lazy">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_124_Invisalign300x450.jpg" alt="Invisalign provider logo" loading="lazy">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_128_ADA300x450.jpg" alt="Australian Dental Association NSW logo" loading="lazy">
+      <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_132_QIP.png" alt="QIP Accredited Dental Practice logo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="section" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <p class="eyebrow rv">Visit Us</p>
+      <h2 class="rv rv-d1">Let's talk about <span class="serif">your smile.</span></h2>
+      <div class="visit-cards rv rv-d2">
+        <div class="vcard">
+          <span class="ico"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></span>
+          <div><b>Call us</b><a href="tel:0299975770">(02) 9997 5770</a></div>
+        </div>
+        <div class="vcard">
+          <span class="ico"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span>
+          <div><b>Email</b><a href="mailto:admin@parkstdental.com.au">admin@parkstdental.com.au</a></div>
+        </div>
+        <div class="vcard">
+          <span class="ico"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></span>
+          <div><b>Address</b><p>26 Park Street, Mona Vale, NSW 2103 — onsite parking available</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="hours rv rv-d2">
+      <h3>Opening <span class="serif">hours</span></h3>
+      <div class="hrow"><span>Monday – Friday</span><span>8am – 5pm</span></div>
+      <div class="hrow"><span>Saturday</span><span>Closed</span></div>
+      <div class="hrow"><span>Sunday &amp; Public Holidays</span><span>Closed</span></div>
+      <p class="note">Early mornings and late afternoons by appointment only.<br><b>For any emergency appointment, call (02) 9997 5770.</b></p>
+      <a class="btn btn-terra" href="https://parkstdental.com.au/contact/">
+        Book Online
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://parkstdental.com.au/wp-content/uploads/2026/02/Untitled-design-59-e1770894207350.png" alt="Park St Dental Practice logo" loading="lazy">
+        <p>Park St Dental Practice is a Family, Children and Cosmetic Dental Practice and Dental Implant Centre in Mona Vale.</p>
+      </div>
+      <div>
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="https://parkstdental.com.au/">Home</a></li>
+          <li><a href="https://parkstdental.com.au/our-team/">Our Team</a></li>
+          <li><a href="https://parkstdental.com.au/">Results</a></li>
+          <li><a href="https://parkstdental.com.au/contact/">Contact</a></li>
+          <li><a href="https://parkstdental.com.au/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Treatments</h5>
+        <ul>
+          <li><a href="#treatments">General Dentistry</a></li>
+          <li><a href="#treatments">Cosmetic Dentistry</a></li>
+          <li><a href="#treatments">Dental Implants</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Opening Hours</h5>
+        <ul>
+          <li>Monday–Friday: 8am–5pm</li>
+          <li>Saturday: Closed</li>
+          <li>Sunday &amp; Public Holidays: Closed</li>
+          <li>Emergencies: (02) 9997 5770</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-tag">Supporting your <span class="serif">wellness journey</span></p>
+    <div class="footer-base">
+      <p>© 2026 Park St Dental Practice. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/" aria-label="Park St Dental on Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.6l.4-3h-3V9.05c0-.87.24-1.46 1.49-1.46H16.6V4.9c-.28-.04-1.22-.12-2.32-.12-2.29 0-3.86 1.4-3.86 3.97V11H7.8v3h2.62v7h3.08z"/></svg></a>
+        <a href="https://www.instagram.com/" aria-label="Park St Dental on Instagram"><svg viewBox="0 0 24 24"><path d="M12 8.75a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zM12 7a5 5 0 110 10 5 5 0 010-10zm5.3-.55a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0zM12 4.6c-2.4 0-2.7.01-3.65.05-.94.05-1.45.2-1.79.33-.45.18-.77.39-1.1.72-.34.33-.55.65-.72 1.1-.14.34-.29.85-.33 1.79C4.36 9.55 4.35 9.84 4.35 12s.01 2.45.06 3.4c.04.95.19 1.46.33 1.8.17.45.38.77.72 1.1.33.33.65.54 1.1.72.34.13.85.28 1.79.33.95.04 1.24.05 3.65.05s2.7-.01 3.65-.05c.94-.05 1.45-.2 1.79-.33.45-.18.77-.39 1.1-.72.34-.33.55-.65.72-1.1.14-.34.29-.85.33-1.8.05-.95.06-1.24.06-3.4s-.01-2.45-.06-3.4c-.04-.95-.19-1.46-.33-1.8a2.96 2.96 0 00-.72-1.1 2.96 2.96 0 00-1.1-.72c-.34-.13-.85-.28-1.79-.33-.95-.04-1.25-.05-3.65-.05zm0-1.85c2.45 0 2.75.01 3.71.06.96.04 1.62.2 2.19.42.6.23 1.1.54 1.6 1.05.51.5.82 1 1.05 1.6.22.57.38 1.23.42 2.19.05.96.06 1.26.06 3.71s-.01 2.75-.06 3.71c-.04.96-.2 1.62-.42 2.19-.23.6-.54 1.1-1.05 1.6-.5.51-1 .82-1.6 1.05-.57.22-1.23.38-2.19.42-.96.05-1.26.06-3.71.06s-2.75-.01-3.71-.06c-.96-.04-1.62-.2-2.19-.42a4.4 4.4 0 01-1.6-1.05 4.4 4.4 0 01-1.05-1.6c-.22-.57-.38-1.23-.42-2.19-.05-.96-.06-1.26-.06-3.71s.01-2.75.06-3.71c.04-.96.2-1.62.42-2.19.23-.6.54-1.1 1.05-1.6.5-.51 1-.82 1.6-1.05.57-.22 1.23-.38 2.19-.42.96-.05 1.26-.06 3.71-.06z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- floating mobile CTA -->
+<div class="float-cta">
+  <a class="btn btn-ghost" style="background:rgba(0,4,11,.85);backdrop-filter:blur(8px)" href="tel:0299975770">Call Us</a>
+  <a class="btn btn-terra" href="https://parkstdental.com.au/contact/">Book Online</a>
+</div>
+
+<script>
+// header scroll state
+const header=document.getElementById('header');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>40)},{passive:true});
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// gentle parallax on heritage band
+const bg=document.getElementById('heritageBg');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(bg&&!reduce){
+  addEventListener('scroll',()=>{
+    const r=bg.parentElement.getBoundingClientRect();
+    if(r.top<innerHeight&&r.bottom>0){
+      const p=(r.top+r.height/2-innerHeight/2)/innerHeight;
+      bg.style.transform=`translateY(${p*-36}px)`;
+    }
+  },{passive:true});
+}
+</script>
+</body>
+</html>

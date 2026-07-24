@@ -1,0 +1,38 @@
+name: Fetch site assets
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/fetch-assets.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download assets from parkstdental.com.au
+        run: |
+          mkdir -p assets
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
+          dl(){ curl -fsSL -A "$UA" -e "https://parkstdental.com.au/" "$1" -o "assets/$2" || echo "FAILED $2"; }
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/02/Untitled-design-63-e1770958658218.png" logo.png
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03503-E.jpg-scaled.webp" dr-gorji.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03698-E.jpg-scaled.webp" cosmetic-mirror.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/IMG_5900-scaled-e1775736333782.webp" childrens.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04077-E.jpg.webp" implant-tech.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN03963-E.jpg-scaled.webp" reception.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04621-Edit.webp" dentists.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/04/TIN04658-Edit.webp" heritage.webp
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_123_Philips300x450.jpg" philips.jpg
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_124_Invisalign300x450.jpg" invisalign.jpg
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_128_ADA300x450.jpg" ada.jpg
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/02/imageye___-_imgi_132_QIP.png" qip.png
+          dl "https://parkstdental.com.au/wp-content/uploads/2026/03/smiles-landscape.mp4" smiles-landscape.mp4
+          ls -la assets/
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "Add downloaded site assets" || echo "nothing to commit"
+          git push

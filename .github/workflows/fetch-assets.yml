@@ -2,7 +2,7 @@ name: Fetch site assets
 on:
   workflow_dispatch:
   push:
-    paths: ['.github/workflows/fetch-assets.yml']
+    branches: [main]
 permissions:
   contents: write
 jobs:

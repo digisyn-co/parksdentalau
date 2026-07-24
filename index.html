@@ -269,7 +269,7 @@ body.menu-open .menu-btn span{background:#fff}
 .partner-logos img:hover{filter:none;opacity:1}
 
 /* ---------- visit / contact ---------- */
-.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,90px)}
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,90px);align-items:end}
 .visit-cards{display:grid;gap:14px;margin-top:var(--s4)}
 .vcard{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px 24px;transition:border-color .3s,transform .3s var(--ease)}
 .vcard:hover{border-color:rgba(136,87,72,.4);transform:translateX(4px)}
@@ -766,6 +766,12 @@ if('IntersectionObserver' in window){
 }
 // safety net: if anything prevented reveals, force everything visible after 3s
 setTimeout(()=>{document.querySelectorAll('.rv:not(.in),.lr:not(.in),.ir:not(.in)').forEach(el=>el.classList.add('in'))},3000);
+
+// images that fail to load: hide the broken img and give its frame a branded wash
+document.querySelectorAll('img').forEach(im=>{
+  const fail=()=>{im.style.display='none';const p=im.parentElement;if(p){p.style.background='linear-gradient(135deg,var(--rose-tint),var(--terra-tint) 60%,#fff)';}};
+  if(im.complete&&im.naturalWidth===0)fail();else im.addEventListener('error',fail);
+});
 
 // hero video: if it can't load or play, remove it gracefully (poster/gradient remains)
 const hv=document.querySelector('.hero-media video');
